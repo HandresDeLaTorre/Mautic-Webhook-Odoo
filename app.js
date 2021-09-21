@@ -1,4 +1,5 @@
 require('dotenv').config()
+const serverless = require('serverless-http');
 const express = require('express')
 const cors = require('cors')
 const app = express()
@@ -14,3 +15,5 @@ app.use('/api/1.0', require('./api/routes'))
 app.listen(PORT, () => {
     console.log('API lista por el puerto: ', PORT)
 })
+
+module.exports.handler = serverless(app);
