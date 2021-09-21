@@ -4,7 +4,8 @@
   "description": "Crear un webhook que crea los contactos en Odoo Desde Mautic.",
   "main": "app.js",
   "scripts": {
-    "test": "test.js"
+    "test": "nodemon test.js",
+    "start": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -28,4 +29,4 @@
     "express": "^4.17.1",
     "odoo-await": "^2.3.0"
   }
-}
+} 
