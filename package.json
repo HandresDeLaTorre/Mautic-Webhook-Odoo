@@ -1,0 +1,31 @@
+{
+  "name": "mautic-webhook-odoo",
+  "version": "1.0.0",
+  "description": "Crear un webhook que crea los contactos en Odoo Desde Mautic.",
+  "main": "app.js",
+  "scripts": {
+    "test": "test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HandresDeLaTorre/Mautic-Webhook-Odoo.git"
+  },
+  "keywords": [
+    "Odoo",
+    "Mautic",
+    "API",
+    "REST"
+  ],
+  "author": "Handres De La Torre",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HandresDeLaTorre/Mautic-Webhook-Odoo/issues"
+  },
+  "homepage": "https://github.com/HandresDeLaTorre/Mautic-Webhook-Odoo#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "odoo-await": "^2.3.0"
+  }
+}
