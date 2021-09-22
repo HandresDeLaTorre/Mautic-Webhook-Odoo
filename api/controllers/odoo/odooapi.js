@@ -100,43 +100,6 @@ const readContacts = async () => {
 
 //readContacts()
 
-const createContact1 = async (req, res) => {
-    let points = req.body['mautic.lead_points_change'][0]['points']['new_points'];
-
-    let data = req.body['mautic.lead_points_change'][0]['contact']['fields']['core'];
-    let name = data.firstname.normalizedValue
-    let lastname = data.lastname.normalizedValue
-    let fullname = name + ' ' + lastname
-    let contactName = fullname
-    let correo = data.email.normalizedValue
-
-    try {
-        await odoo.connect();
-        switch (points) {
-            case 80:
-                console.log('funciona los puntos');
-                //const contactlead = await odoo.create('crm.lead', {name: fullname, email: correo});
-                //const searchLeads = await odoo.searchRead('crm.lead')
-                const contactcreated = await odoo.create('res.partner', {name: fullname, email: correo});
-                console.log(`Partner created with ID ${contactcreated}`);
-                console.log('**--Log desde API ODOO', JSON.stringify(correo));
-                break;
-        
-            default:
-                console.log(`***Los puntos son: ${points}`);
-                // const creatLeads = await odoo.create('crm.lead', {name:'Esta es una prueba',contact_name: fullname, email_from: correo})
-                // console.log(`***Los leads son: ${JSON.stringify(creatLeads)}`);
-                break;
-        }
-        // const contactcreated = await odoo.create('res.partner', {name: fullname, email: correo});
-        // console.log(`Partner created with ID ${contactcreated}`);
-        // console.log('**--Log desde API ODOO', JSON.stringify(correo));
-    } catch (e) {
-        console.error(e);
-    }
-    
-}
-
 //readContacts()
 module.exports = {
     searchContact,
