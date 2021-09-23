@@ -6,7 +6,7 @@ const { httpError } = require('../../helpers/handleError')
 const odooApi = require('../odoo/odooapi')
 
 const respuesta = (req, res) => {
-    res.send(`<h1>Funciona el webhook</h1>`)
+    res.send(`<h1>Funciona el webhook de localhost</h1>`)
 }
 
 let turnos = []
@@ -36,7 +36,7 @@ const pointschange = async (req, res) => {
         if (points >= 20 && points <= 45 && idUsuarioOdoo.length === 0 && idLeadOdoo.length === 0) {
             // console.log(`*==>Los puntos totales del usuario son: ${points} Se puede crear un usuario`);
             const countryId = await odooApi.searchCountry(parametros.country)
-            const crearContact = await odooApi.createContact(parametros.name, parametros.email, parseInt(countryId, 10), parametros.mobile)
+            const crearContact = await odooApi.createContact(fullname, parametros.email, parseInt(countryId, 10), parametros.mobile)
             //console.log(`Se creo el contacto ${crearContact}`);
             res.status(200).send({ "completo": "201", "webhook": "TEST" });
 
