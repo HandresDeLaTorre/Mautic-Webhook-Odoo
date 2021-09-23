@@ -98,9 +98,10 @@ const readContacts = async () => {
     }
 }
 
-//readContacts()
+const searchproduct = async () => {
+    
+}
 
-//readContacts()
 module.exports = {
     searchContact,
     searchLead,
